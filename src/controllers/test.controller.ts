@@ -5,7 +5,7 @@ class Test {
     constructor() {}
 
     sayHello(req: Request, res: Response, next: NextFunction) {
-        return res.json('HELLO');
+        return res.json('HOLA');
     }
 }
 

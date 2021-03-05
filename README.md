@@ -10,3 +10,9 @@ $ npm run build
 ```bash
 $ npm start
 ```
+
+Ruta GET de ejemplo
+```
+$ curl http://localhost:5000/api/v1/test
+```
+Responde con un mensaje JSON "HOLA"
