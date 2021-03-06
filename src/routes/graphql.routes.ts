@@ -18,10 +18,16 @@ const root = {
 
 const graphqlRouter = Router();
 
-graphqlRouter.get('/', graphqlHTTP({
+graphqlRouter.get('', graphqlHTTP({
     schema: schema,
     rootValue: root,
     graphiql: true,
+}));
+
+graphqlRouter.post('', graphqlHTTP({
+    schema: schema,
+    rootValue: root,
+    graphiql: false,
 }));
 
 export default graphqlRouter;
