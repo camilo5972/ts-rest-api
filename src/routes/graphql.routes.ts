@@ -1,6 +1,6 @@
 import { buildSchema } from 'graphql';
 import { graphqlHTTP } from 'express-graphql';
-import { Router } from 'express';
+import { app } from '../app'
 
 // Construct a schema, using GraphQL schema language
 const schema = buildSchema(`
@@ -16,12 +16,8 @@ const root = {
     },
 };
 
-const graphqlRouter = Router();
-
-graphqlRouter.get('/', graphqlHTTP({
+app.use('/', graphqlHTTP({
     schema: schema,
     rootValue: root,
     graphiql: true,
 }));
-
-export default graphqlRouter;
